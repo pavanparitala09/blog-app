@@ -34,8 +34,9 @@ function ArticleDetail() {
       return;
 
     try {
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const res = await axios.patch(
-        `http://localhost:5000/author-api/articles/${article._id}/status`,
+        `${BASE_URL}/author-api/articles/${article._id}/status`,
         { isArticleActive: newStatus },
         { withCredentials: true },
       );
@@ -62,8 +63,9 @@ function ArticleDetail() {
         comment: commentText,
       };
 
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const res = await axios.post(
-        "http://localhost:5000/user-api/articles",
+        `${BASE_URL}/user-api/articles`,
         commentBody,
         { withCredentials: true },
       );

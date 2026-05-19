@@ -33,9 +33,9 @@ function EditArticle({ article, setArticle, setIsEditing }) {
 
     try {
       // URL is just '/articles' because your backend doesn't use /:id params
-      const BASE_URL = import.meta.env.VITE_API_URL;
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const res = await axios.put(
-        "http://localhost:5000/author-api/articles",
+        `${BASE_URL}/author-api/articles`,
         finalData,
         { withCredentials: true },
       );

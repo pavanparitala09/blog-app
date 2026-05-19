@@ -2,7 +2,7 @@ import axios from "axios";
 import { create } from "zustand";
 import { persist } from "zustand/middleware"; // 1. Import persist middleware
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 export const useAuth = create(
   persist(
     (set) => ({

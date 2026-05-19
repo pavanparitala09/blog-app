@@ -27,9 +27,10 @@ function Register() {
     formData.append("profileImageUrl", profileImageUrl[0]);
 
     try {
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       if (role === "USER") {
         let resObj = await axios.post(
-          "http://localhost:5000/user-api/users",
+          `${BASE_URL}/user-api/users`,
           formData,
         );
         if (resObj.status === 201) {
@@ -38,7 +39,7 @@ function Register() {
       }
       if (role === "AUTHOR") {
         let resObj = await axios.post(
-          "http://localhost:5000/author-api/users",
+          `${BASE_URL}/author-api/users`,
           formData,
         );
         if (resObj.status === 201) {

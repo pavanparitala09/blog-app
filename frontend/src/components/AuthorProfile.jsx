@@ -28,8 +28,10 @@ function AuthorProfile() {
       try {
         setLoading(true);
         console.log("User ID ready, fetching articles for:", userId);
+        const BASE_URL =
+          import.meta.env.VITE_API_URL || "http://localhost:5000";
         const res = await axios.get(
-          `http://localhost:5000/author-api/articles/${userId}`,
+          `${BASE_URL}/author-api/articles/${userId}`,
           { withCredentials: true },
         );
 

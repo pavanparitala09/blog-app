@@ -14,6 +14,7 @@ const app = exp();
 app.use(
   cors({
     origin: [
+      "https://blog-app-omega-seven.vercel.app",
       "https://blogapp-indol-six.vercel.app",
       "https://blogapp-9cdzt06r7-nithin-6546s-projects.vercel.app",
       "http://localhost:5173",
@@ -61,7 +62,9 @@ app.use((err, req, res, next) => {
   console.log("Error name:", err.name);
   console.log("Error code:", err.code);
   console.log("Full error:", err);
-  import("fs").then(fs => fs.writeFileSync("error.log", err.stack || err.toString()));
+  import("fs").then((fs) =>
+    fs.writeFileSync("error.log", err.stack || err.toString()),
+  );
 
   // mongoose validation error
   if (err.name === "ValidationError") {

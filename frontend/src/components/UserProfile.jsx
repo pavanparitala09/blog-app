@@ -33,8 +33,9 @@ function UserProfile() {
 
     try {
       setLoading(true);
+      const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-      const res = await axios.get("http://localhost:5000/user-api/articles", {
+      const res = await axios.get(`${BASE_URL}/user-api/articles`, {
         withCredentials: true,
       });
 
