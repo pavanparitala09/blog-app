@@ -1,0 +1,11 @@
+Error: Must supply api_key
+    at ensureOption (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\utils\ensureOption.js:19:13)
+    at Object.sign_request (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\utils\index.js:1154:16)
+    at Object.process_request_params (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\utils\index.js:1206:22)
+    at call_api (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\uploader.js:488:18)
+    at Object.upload (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\uploader.js:55:10)
+    at Object.upload_stream (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\uploader.js:42:18)
+    at Object.upload_stream (C:\Users\pavan\Downloads\Capstone-Project-main\Capstone-Project-main\blog-app-backend\node_modules\cloudinary\lib\utils\index.js:1405:21)
+    at file:///C:/Users/pavan/Downloads/Capstone-Project-main/Capstone-Project-main/blog-app-backend/config/cloudinaryUpload.js:5:48
+    at new Promise (<anonymous>)
+    at uploadToCloudinary (file:///C:/Users/pavan/Downloads/Capstone-Project-main/Capstone-Project-main/blog-app-backend/config/cloudinaryUpload.js:4:16)
