@@ -2,7 +2,7 @@
 
 This directory contains the user interface and client-side logic for the Blog Platform Capstone Project. It is a modern, responsive Single Page Application (SPA) built using React and Vite.
 
-## 📂 Folder Structure
+## Folder Structure
 
 The frontend is structured to promote reusability and maintainability of UI components and state management.
 
@@ -26,7 +26,7 @@ frontend/
 └── tailwind.config.js     # Configuration for TailwindCSS theme, colors, and utility classes
 ```
 
-## 📦 Packages & Technologies Used
+## Packages & Technologies Used
 
 - **`react` & `react-dom`**: The core library for building the interactive user interface using a component-based architecture.
 - **`vite`**: A blazing fast frontend build tool and development server, providing near-instant Hot Module Replacement (HMR) and optimized production builds.
@@ -39,14 +39,14 @@ frontend/
 - **`lucide-react` & `react-icons`**: Extensive libraries of scalable, customizable SVG icons used throughout the UI to enhance visual cues and buttons.
 - **`cors`**: Included for any local client-side dev requirements, though primarily handled by the backend.
 
-## ⚙️ How It Works
+## How It Works
 
 1. **Entry & Routing**: The app starts at `main.jsx`, rendering the `App.jsx` component. `App.jsx` sets up the `react-router` allowing users to navigate to different views based on the URL path.
 2. **State Management**: The `zustand` store (`AuthStore`) initializes and checks if a user session exists. The UI (like the `Header`) reacts to this state, showing either "Login/Register" or the user's profile and a "Logout" button.
 3. **API Integration**: Components make calls to the backend using `axios`. Form submissions are handled effortlessly via `react-hook-form`, sending validated data to the server.
 4. **Styling**: `tailwindcss` provides utility classes, ensuring the application is fully responsive across mobile, tablet, and desktop screens with minimal custom CSS.
 
-## 🚀 Setup & Running Locally
+## Setup & Running Locally
 
 1. Install the necessary dependencies: 
    ```bash
@@ -58,7 +58,7 @@ frontend/
    ```
 3. The application will run (typically on `http://localhost:5173` or `http://localhost:5176`), providing an interactive environment with instant feedback on code changes.
 
-## 🛠️ Initial Project Setup Commands
+## Initial Project Setup Commands
 
 If you are recreating this project from scratch, these are the initial commands used to initialize the frontend environment:
 

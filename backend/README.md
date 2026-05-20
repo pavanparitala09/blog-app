@@ -2,7 +2,7 @@
 
 This directory contains the backend backend APIs and services for the Capstone Project, developed using Node.js, Express.js, and MongoDB.
 
-## 📂 Folder Structure
+## Folder Structure
 
 The backend follows a modular, feature-based architecture to keep the code organized and maintainable.
 
@@ -25,7 +25,7 @@ backend/
 └── .env               # Environment variables (Database URL, JWT Secret, Port)
 ```
 
-## 📦 Packages & Technologies Used
+## Packages & Technologies Used
 
 - **`express`**: Fast, unopinionated web framework for Node.js used to build the RESTful APIs.
 - **`mongoose`**: Elegant MongoDB object modeling (ODM) for Node.js, providing schema validation and easy database interaction.
@@ -37,7 +37,7 @@ backend/
 - **`cookie-parser`**: Middleware to parse cookies attached to the client request object. Essential for handling JWTs stored in HTTP-only cookies.
 - **`dotenv`**: Loads environment variables from a `.env` file into `process.env`, keeping sensitive configuration like database URLs and API keys secure.
 
-## ⚙️ How It Works
+## How It Works
 
 1. **Server Initialization**: `server.js` sets up the Express application, applies global middlewares (like `cors`, `express.json()`, `cookieParser()`), and connects to MongoDB.
 2. **Routing**: API endpoints are modularized in the `APIs/` directory. Each route file handles a specific domain (e.g., `/user-api`, `/admin-api`).
@@ -45,7 +45,7 @@ backend/
 4. **Database Operations**: Controllers in the `APIs/` directory interact with the MongoDB database using Mongoose models (`models/`).
 5. **File Uploads**: When an image is uploaded (e.g., creating a new blog post), `multer` intercepts the file, and it is then uploaded to `Cloudinary` for storage.
 
-## 🚀 Setup & Running Locally
+## Setup & Running Locally
 
 1. Create a `.env` file in the `backend/` directory:
    ```env
@@ -62,7 +62,7 @@ backend/
    npm start
    ```
 
-## 🛠️ Initial Project Setup Commands
+## Initial Project Setup Commands
 
 If you are recreating this project from scratch, these are the initial commands used to initialize the backend environment:
 
