@@ -16,7 +16,6 @@ app.use(
     origin: [
       "https://blog-app-omega-seven.vercel.app",
       "https://blogapp-indol-six.vercel.app",
-      "https://blogapp-9cdzt06r7-nithin-6546s-projects.vercel.app",
       "https://blog-f63duy49l-paritala-pavan-kumars-projects.vercel.app",
       "https://blog-i4gkn30r2-paritala-pavan-kumars-projects.vercel.app",
       "http://localhost:5173",
@@ -71,7 +70,7 @@ app.use((err, req, res, next) => {
   // mongoose validation error
   if (err.name === "ValidationError") {
     return res.status(400).json({
-      message: "error occurred",
+      message: err.message,
       error: err.message,
     });
   }
@@ -79,7 +78,7 @@ app.use((err, req, res, next) => {
   // mongoose cast error
   if (err.name === "CastError") {
     return res.status(400).json({
-      message: "error occurred",
+      message: err.message,
       error: err.message,
     });
   }
@@ -92,7 +91,7 @@ app.use((err, req, res, next) => {
     const field = Object.keys(keyValue)[0];
     const value = keyValue[field];
     return res.status(409).json({
-      message: "error occurred",
+      message: `${field} "${value}" already exists`,
       error: `${field} "${value}" already exists`,
     });
   }
@@ -100,7 +99,7 @@ app.use((err, req, res, next) => {
   // Handle custom Mongoose unique error
   if (err.name === "MongooseError" && err.message.includes("already exists")) {
     return res.status(409).json({
-      message: "error occurred",
+      message: err.message,
       error: err.message,
     });
   }
@@ -116,14 +115,14 @@ app.use((err, req, res, next) => {
   // ✅ HANDLE CUSTOM ERRORS
   if (err.status) {
     return res.status(err.status).json({
-      message: "error occurred",
+      message: err.message,
       error: err.message,
     });
   }
 
   // default server error
   res.status(500).json({
-    message: "error occurred",
+    message: "Server side error",
     error: "Server side error",
   });
 });
