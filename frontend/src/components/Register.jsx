@@ -29,19 +29,13 @@ function Register() {
     try {
       const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       if (role === "USER") {
-        let resObj = await axios.post(
-          `${BASE_URL}/user-api/users`,
-          formData,
-        );
+        let resObj = await axios.post(`${BASE_URL}/user-api/users`, formData);
         if (resObj.status === 201) {
           navigate("/login");
         }
       }
       if (role === "AUTHOR") {
-        let resObj = await axios.post(
-          `${BASE_URL}/author-api/users`,
-          formData,
-        );
+        let resObj = await axios.post(`${BASE_URL}/author-api/users`, formData);
         if (resObj.status === 201) {
           navigate("/login");
         }
@@ -155,12 +149,13 @@ function Register() {
           <div className="mb-8">
             <input
               type="password"
-              {...register("password", { 
+              {...register("password", {
                 required: "Password is required",
                 pattern: {
                   value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/,
-                  message: "Password must be at least 6 characters, including a capital letter, a small letter, and a number"
-                }
+                  message:
+                    "Password must be at least 6 characters, including a capital letter, a small letter, and a number",
+                },
               })}
               placeholder="Password"
               className="w-full border-2 border-slate-200 p-4 rounded-xl focus:outline-none focus:border-violet-400 transition-colors"
