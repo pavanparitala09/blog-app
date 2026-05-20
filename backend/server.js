@@ -18,6 +18,7 @@ app.use(
       "https://blogapp-indol-six.vercel.app",
       "https://blogapp-9cdzt06r7-nithin-6546s-projects.vercel.app",
       "https://blog-f63duy49l-paritala-pavan-kumars-projects.vercel.app",
+      "https://blog-i4gkn30r2-paritala-pavan-kumars-projects.vercel.app",
       "http://localhost:5173",
       "http://localhost:5176",
     ], //  frontend URL
